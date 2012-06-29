@@ -1,6 +1,5 @@
 class CollegesController < ApplicationController
-  # GET /colleges
-  # GET /colleges.xml
+  
   def index
       @colleges = College.paginate(:page => params[:page], :per_page => 5)
       
