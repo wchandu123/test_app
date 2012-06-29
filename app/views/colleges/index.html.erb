@@ -1,0 +1,42 @@
+<style type="text/css">
+th
+{
+color:white;
+}
+
+td
+{
+border-bottom:solid #ff0000;
+
+}
+
+</style>
+
+
+<center><h1><font size="6" color="red">Listing colleges</font></h1></center>
+<center><div top:300px; left:400px>
+<table cellspacing="0" cellpadding="10"   >
+  <tr bgcolor="#333333">
+    <th><font size="6" >Name</font></th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+
+<% @colleges.each do |college| %>
+  <tr>
+    <td><%= college.name %></td>
+    <td><%= link_to image_tag("show.jpeg", :size => "30x30"), college %></td>
+    <td><%= link_to image_tag("edit.jpeg", :size => "30x30"), edit_college_path(college) %></td>
+    <td><%= link_to image_tag("delete.jpeg", :size => "30x30"), college, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table></center></div>
+<div class="apple_pagination">
+
+<%= will_paginate @colleges %>
+</div>
+
+<br />
+<center>
+<%= link_to image_tag("addcollege.jpeg", :size => "80x80"), new_college_path %></center>

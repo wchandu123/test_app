@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  gender: MyString
+  age: 1
+  data_of_birth: 2012-06-28
+  course: MyString
+  branch: MyString
+  percentage_in_matriculate: 1.5
+  college: MyString
+  colleg_id: 1
+  address: MyString
+
+two:
+  name: MyString
+  gender: MyString
+  age: 1
+  data_of_birth: 2012-06-28
+  course: MyString
+  branch: MyString
+  percentage_in_matriculate: 1.5
+  college: MyString
+  colleg_id: 1
+  address: MyString

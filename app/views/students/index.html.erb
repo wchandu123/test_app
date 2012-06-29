@@ -1,0 +1,69 @@
+<style type="text/css">
+th
+{
+color:white;
+}
+
+td
+{
+border-bottom:solid #ff0000;
+
+}
+
+</style>
+
+
+
+
+
+<h1><center><font color="red" size="5"><u>LISTING STUDENTS</u></font></center></h1>
+
+<table cellspacing="0" cellpadding="10" width="100%">
+  <tr bgcolor="#333333" >
+    <th>Profile view</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Data of birth</th>
+    <th>Course</th>
+    <th>Branch</th>
+    <th>Percentage in matriculate</th>
+    <th>College</th>
+    <th>College_id</th>
+    <th>Address</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+
+<% @students.each do |student| %>
+  <tr>
+    <td><%= image_tag student.avatar.url(:thumb)%></td>
+    <td><%= student.name %></td>
+    <td><%= student.gender %></td>
+    <td><%= student.age %></td>
+    <td><%= student.data_of_birth %></td>
+    <td><%= student.course %></td>
+    <td><%= student.branch %></td>
+    <td><%= student.percentage_in_matriculate %></td>
+   <td><%= student.college.name %></td>
+   <td><%= student.college_id %></td>
+    <td><%= student.address %></td>
+    <td><%= link_to image_tag("show.jpeg", :size => "30x30"), student %></td>
+    <td><%= link_to image_tag("edit.jpeg", :size => "30x30"), edit_student_path(student) %></td>
+    <td><%= link_to image_tag("delete.jpeg", :size => "30x30"), student, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+
+<% end %>
+</table>
+<div class="apple_pagination">
+
+<%= will_paginate @students %>
+</div>
+
+<br />
+
+<!--<%= link_to 'New Student', new_student_path %>-->
+
+
+
