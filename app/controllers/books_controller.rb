@@ -10,8 +10,7 @@ class BooksController < ApplicationController
     end
   end
 
-  # GET /books/1
-  # GET /books/1.xml
+ 
   def show
     @book = Book.find(params[:id])
 
